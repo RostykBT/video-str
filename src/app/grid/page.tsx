@@ -11,11 +11,14 @@ import {
 import '@livekit/components-styles';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Users, Wifi, WifiOff } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Users, Wifi, WifiOff, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function GridPage() {
     const room = 'quickstart-room';
     const name = 'grid-viewer1';
+    const router = useRouter();
     const [roomInstance] = useState(() => new Room({
         adaptiveStream: true,
         dynacast: true,
@@ -79,10 +82,19 @@ export default function GridPage() {
     } return (
         <RoomContext.Provider value={roomInstance}>
             <div className="min-h-screen bg-background">
-                {/* Minimal Header */}
+                {/* Header with Back Button */}
                 <div className="border-b p-4">
                     <div className="px-16 mx-auto flex items-center justify-between">
                         <div className="flex items-center gap-3">
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => router.back()}
+                                className="mr-2"
+                            >
+                                <ArrowLeft className="w-4 h-4 mr-1" />
+                                Back
+                            </Button>
                             <h1 className="text-xl font-semibold">UAV Streams</h1>
                             <Badge variant="outline" className="text-xs">
                                 <Users className="w-3 h-3 mr-1" />

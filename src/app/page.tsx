@@ -21,7 +21,31 @@ export default function Home() {
           </p>
         </div>
 
+        <div className="flex gap-6 items-center flex-col sm:flex-row flex-wrap justify-center mb-8">
+
+          <Link
+            href="/grid"
+            className="rounded-lg border-2 border-green-500 bg-green-500 hover:bg-green-600 text-white transition-colors flex items-center justify-center gap-3 text-lg font-semibold h-16 px-8 min-w-48"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+            </svg>
+            Grid Room View
+          </Link>
+
+          <Link
+            href="/token-generator"
+            className="rounded-lg border-2 border-orange-500 bg-orange-500 hover:bg-orange-600 text-white transition-colors flex items-center justify-center gap-3 text-lg font-semibold h-16 px-8 min-w-48"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+            </svg>
+            Token Generator
+          </Link>
+        </div>
+        <p>Additional :</p>
         <div className="flex gap-6 items-center flex-col sm:flex-row flex-wrap justify-center">
+
           <Link
             href="/room"
             className="rounded-lg border-2 border-blue-500 bg-blue-500 hover:bg-blue-600 text-white transition-colors flex items-center justify-center gap-3 text-lg font-semibold h-16 px-8 min-w-48"
@@ -29,7 +53,7 @@ export default function Home() {
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
-            Join Room
+            Join Room (Debug page)
           </Link>
 
           <Link
@@ -52,16 +76,8 @@ export default function Home() {
             Screen Cast
           </Link>
 
-          <Link
-            href="/grid"
-            className="rounded-lg border-2 border-green-500 bg-green-500 hover:bg-green-600 text-white transition-colors flex items-center justify-center gap-3 text-lg font-semibold h-16 px-8 min-w-48"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-            </svg>
-            Grid View
-          </Link>
         </div>
+
 
         <div className="text-center sm:text-left mt-4">
           <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 max-w-2xl">
@@ -71,6 +87,7 @@ export default function Home() {
               <li><strong>Start Streaming:</strong> Stream your webcam directly to the room with enhanced controls</li>
               <li><strong>Screen Cast:</strong> Share your screen with minimal, clean interface using modern components</li>
               <li><strong>Grid View:</strong> Monitor all video streams in a fixed 3×3 grid layout for overview</li>
+              <li><strong>Token Generator:</strong> Generate and view LiveKit access tokens for custom integrations</li>
             </ul>
           </div>
         </div>
