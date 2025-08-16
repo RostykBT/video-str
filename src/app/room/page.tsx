@@ -31,7 +31,12 @@ export default function Page() {
                 const data = await resp.json();
                 if (!mounted) return;
                 if (data.token) {
-                    await roomInstance.connect(process.env.NEXT_PUBLIC_LIVEKIT_URL, data.token);
+                    const livekitUrl = process.env.NEXT_PUBLIC_LIVEKIT_URL;
+                    if (!livekitUrl) {
+                        console.error('NEXT_PUBLIC_LIVEKIT_URL environment variable is not set');
+                        return;
+                    }
+                    await roomInstance.connect(livekitUrl, data.token);
                 }
             } catch (e) {
                 console.error(e);
